@@ -1,0 +1,107 @@
+/* color scheme sourced from http://khroma.co/generator/ */
+:root {
+    --outer-space: #33393f;
+    --bright-turquoise: #2aefcb;
+    --gin: #e0eae4;
+    --heliotrope: #e866ec;
+}
+
+body {
+    color: var(--heliotrope);
+    background-color: var(--outer-space);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    width: 95%;
+    margin: auto;
+}
+
+header {
+    margin: 0.5rem auto;
+    text-align: center;
+}
+
+header p {
+    color: var(--gin);
+}
+
+footer {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.card-column {
+    flex: 1 0 100%;
+    padding: 1rem 0;
+    transition: flex-basis 500ms linear;
+    margin-bottom: 1.5rem;
+    min-height: 100%;
+}
+
+.code-card {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    border: 2px dashed var(--gin);
+    margin: 0 1rem;
+}
+
+.card-header {
+    border: 2px solid var(--gin);
+    border-radius: 8px;
+    background-color: var(--outer-space);
+    margin: -1.5rem 2.5rem;
+    font-size: 120%;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.card-body {
+    padding: 2rem 1rem 0;
+}
+
+.code-block {
+    padding: 1rem;
+    color: var(--gin);
+    font-family: monospace;
+    overflow: auto;
+    white-space: pre-wrap;
+    user-select: all;
+
+    background-image: linear-gradient(rgba(232, 102, 236, 0.3) 0%,
+            rgba(232, 102, 236, 0.6) 100%);
+    border-radius: 8px;
+    margin: 1rem;
+}
+
+.code-card:hover,
+.code-card:hover .card-header {
+    box-shadow: inset 0px 0px 8px rgba(232, 102, 236, 1), 0 0 15px rgba(232, 102, 236, 1);
+    transition: all 0.5s ease-in-out;
+}
+
+.code-card .code-block {
+    flex-grow: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .card-column {
+        flex: 0 0 50%;
+        max-width: 50%
+    }
+
+    .card-column:last-child {
+        flex-grow: 1;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .card-column {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+}
